@@ -42,7 +42,7 @@ services:
       context: ./front-end
       dockerfile: Dockerfile.dev
     environment:
-      - REACT_APP_DOMAIN='http://api:'
+      - REACT_APP_DOMAIN='http://ec2-18-222-139-42.us-east-2.compute.amazonaws.com:'
       - REACT_APP_PORT=3001
       - REACT_APP_API_KEY=1234
     ports:
