@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch ./index.js",
-    "test": "mocha ./src/test/*.test.js"
+    "test": "mocha ./src/test/*.test.js",
+    "migrate": "sequelize db:migrate"
   },
   "repository": {
     "type": "git",

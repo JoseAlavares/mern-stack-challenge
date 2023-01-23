@@ -5,8 +5,6 @@ const { isEmpty } = require('lodash')
 const { logger } = require('../../middlewares/logger')
 
 module.exports = class UserController {
-    static '@noCallThru' = true
-
     constructor() {
         this.tableName = 'user'
     }
