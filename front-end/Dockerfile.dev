@@ -1,0 +1,18 @@
+#build environment
+FROM node:alpine as build
+WORKDIR /app
+ENV REACT_APP_API=https://styropek-api.azurewebsites.net/api/v1
+ENV REACT_APP_API_KEY=297fa742d6ccd7956346256edf5db2f8f740b3a830a443f349558bdeea12136b.cef56d72326d42045659aaf65ee68ee0dfad960bee45759bdd9a31fdccce42e5
+ENV REACT_APP_VIDEO_CONFERENCE_SETTINGS_SECRET=1234
+COPY package*.json ./
+RUN npm ci --silent
+RUN npm install react-scripts@3.4.0 -g --silent
+COPY . ./
+RUN npm run build
+
+# production environment
+FROM nginx:stable-alpine
+COPY --from=build /app/build /usr/share/nginx/html
+COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
