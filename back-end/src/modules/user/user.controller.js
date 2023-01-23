@@ -94,6 +94,7 @@ module.exports = class UserController {
                 secondLastName: user.second_last_name, email: user.email
             }
         } catch (error) {
+            logger.log('error', error)
             logger.log('error', 'Error in the UserController method create, couldn\'t create a user record')
             throw new ErrorService('UserController', email)
         }
