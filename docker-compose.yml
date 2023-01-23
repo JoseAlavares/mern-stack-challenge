@@ -19,7 +19,7 @@ services:
     ports:
     - 3001:3001
     volumes:
-    - .:/home/node/app
+    - ./back-end:/home/node/app
     cpus: 0.25
     mem_reservation: "64M"
     mem_limit: "128M"
