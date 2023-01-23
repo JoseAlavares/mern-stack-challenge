@@ -35,8 +35,7 @@ const Home = (props) => {
                                         <li>ReactJS</li>
                                         <li>NodeJS</li>
                                     </ol>
-                                    <p>Ademas se usa un contenedor docker para el back-end en NodeJS el servidor docker esta instalado en una instancia EC2 de AWS</p>
-                                    <p>El front esta ubicado en bucket S3 de AWS distribuido atravez del servicio de CDN CloudWatch de AWS</p>
+                                    <p>Ademas se usan un contenedores docker para el back-end en NodeJS y el front-end el servidor docker esta instalado en una instancia EC2 de AWS</p>
                                     <MDBBtn
                                         outline
                                         color="white"
