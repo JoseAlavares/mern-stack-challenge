@@ -47,12 +47,14 @@ module.exports = class RealStateController {
     }
 
     async delete({ id }) {
+        console.log('id', id)
         try {
             await models[this.tableName].update(
                 { active: false },
-                { where: { email } }
+                { where: { id } }
             )
         } catch (error) {
+            console.error(error)
             logger.log('error', this.loggerMessages('delete', `couldn't disable the real state: ${id}`))
             throw new ErrorService('RealStateController', id)
         }

@@ -23,7 +23,8 @@ const Navbar = (props) => {
         if(window.sessionStorage.length) {
             setToken(window.sessionStorage.getItem("jwt"));
             setIdUser(window.sessionStorage.getItem("user"));
-        }           
+            setIdUser(true)
+        }
     }, []);
 
     const toggleCollapse = () => {
@@ -37,6 +38,7 @@ const Navbar = (props) => {
                     <strong className="white-text">MDBootstrap React</strong>
                 </MDBNavbarBrand>
                 <MDBNavbarToggler onClick={toggleCollapse} />
+                {idUser &&
                 <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
                     <MDBNavbarNav left>                    
                             <MDBNavItem>
@@ -103,7 +105,7 @@ const Navbar = (props) => {
                             </MDBNavItem>
                         </MDBNavbarNav>
                     }
-                </MDBCollapse>
+                </MDBCollapse>}
             </MDBNavbar>
         </Router>
     );

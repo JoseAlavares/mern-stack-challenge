@@ -99,10 +99,12 @@ router.delete("/:id", async (req, resp) => {
     }
 
     try {
-        await realStateInstance.delete(req.params.id)
+        const id = req.params.id
+        await realStateInstance.delete({ id })
         return resp.status(200).json({ message: 'OK' })
     } catch (error) {
-        // logger.log('error', `Error in the service to create a new user`)
+        console.error(error)
+        logger.log('error', `Error in the service to delete a real state`)
         return resp.status(500).json({ message: 'Internal server error' })
     }
 })
