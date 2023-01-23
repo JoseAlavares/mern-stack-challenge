@@ -1,5 +1,5 @@
 #build environment
-FROM node:alpine as build
+FROM node:12.16.3-alpine as build
 WORKDIR /app
 ENV REACT_APP_API=https://styropek-api.azurewebsites.net/api/v1
 ENV REACT_APP_API_KEY=297fa742d6ccd7956346256edf5db2f8f740b3a830a443f349558bdeea12136b.cef56d72326d42045659aaf65ee68ee0dfad960bee45759bdd9a31fdccce42e5
