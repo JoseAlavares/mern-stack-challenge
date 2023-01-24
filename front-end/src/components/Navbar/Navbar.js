@@ -75,10 +75,10 @@ const Navbar = (props) => {
                                             href="/login">
                                             Cerrar sesion
                                         </MDBDropdownItem>
-                                        <MDBDropdownItem 
+                                        {/* <MDBDropdownItem 
                                             href="/edit-user">
                                             Perfil de usuario
-                                        </MDBDropdownItem>                                
+                                        </MDBDropdownItem>                                 */}
                                     </MDBDropdownMenu>
                                 </MDBDropdown>
                             </MDBNavItem>
